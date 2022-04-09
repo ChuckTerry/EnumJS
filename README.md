@@ -5,39 +5,54 @@ Version: 1.2.1
 
 ## Usage
 ### Instantiation
-  ```javascript// The Starting Value will always be the first vaue passed to the constructor
+  ```javascript
+  // The Starting Value will always be the first vaue passed to the constructor
   new Enum(/*Array of States*/, /*Surpress Errors*/ [optional]);
   const myEnum = new Enum(['OFF', 'LOW', 'MID', 'HIGH'], false);
   
   // Or use the static from() method
-  const myEnum = Enum.from('OFF', 'LOW', 'MID', 'HIGH']);```
+  const myEnum = Enum.from('OFF', 'LOW', 'MID', 'HIGH']);
+  ```
 
 ## Check if object is Enum
-  ```javascriptEnum.isEnum(myEnum) // --> True```
+  ```javascript
+  Enum.isEnum(myEnum) // --> True
+  ```
 
 ### Get Current State
-  ```javascriptconst currentState = myEnum.getState(); // --> 'OFF'
+  ```javascript
+  const currentState = myEnum.getState(); // --> 'OFF'
 
   // Or use the accessor
-  const currentState = myEnum.state; // --> 'OFF'```
+  const currentState = myEnum.state; // --> 'OFF'
+  ```
 
 ### Set Current State
-  ```javascriptmyEnum.setState('MID'); // --> 'MID'
+  ```javascript
+  myEnum.setState('MID'); // --> 'MID'
 
   // Or use the accessor
-  myEnum.state = 'MID'; // --> 'MID'```
+  myEnum.state = 'MID'; // --> 'MID'
+  ```
 
 ### Get Number of Valid States
-  ```javascriptmyEnum.length; // --> 4```
+  ```javascript
+  myEnum.length; // --> 4
+  ```
 
 ### Get All Valid States
-  ```javascriptmyEnum.getValidStates(); // --> ['OFF', 'LOW', 'MID', 'HIGH']```
+  ```javascript
+  myEnum.getValidStates(); // --> ['OFF', 'LOW', 'MID', 'HIGH']
+  ```
 
 ### Test if State is Valid
-  ```javascriptmyEnum.isValidState('MAX'); // --> false```
+  ```javascript
+  myEnum.isValidState('MAX'); // --> false
+  ```
 
 ### Locking
-  ```javascript// Locking an Enum will return a key (Symbol) used to unlock it again
+  ```javascript
+  // Locking an Enum will return a key (Symbol) used to unlock it again
   const myKey = myEnum.lock();
 
   myEnum.setState('LOW'); // Throws an error (Or nothing if surpressed);
@@ -46,7 +61,10 @@ Version: 1.2.1
   myEnum.setState('LOW'); // Succeeds
 
   // Locking Enum with a "true" parameter locks it permanently and returns true
-  myEnum.lock(true); // --> true```
+  myEnum.lock(true); // --> true
+  ```
 
 ### Checking Lock Status
-  ```javascriptmyEnum.isLocked(); // --> true```
+  ```javascript
+  myEnum.isLocked(); // --> true
+  ```
